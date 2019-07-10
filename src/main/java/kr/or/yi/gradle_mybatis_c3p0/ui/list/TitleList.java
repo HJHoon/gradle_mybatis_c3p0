@@ -63,9 +63,9 @@ public class TitleList extends JPanel {
 	}
 	
 	protected void tableAlignmentAndWidth() {
-		// Á÷Ã¥¹øÈ£, Á÷Ã¥¸íÀº °¡¿îµ¥ Á¤·Ä
+		// ì§ì±…ë²ˆí˜¸, ì§ì±…ëª…ì€ ê°€ìš´ë° ì •ë ¬
 		tableCellAlignment(SwingConstants.CENTER, 0, 1);
-		// Á÷Ã¥¹øÈ£, Á÷Ã¥¸íÀÇ ÆøÀ» (100, 200)À¸·Î °¡´ÉÇÏ¸é ¼³Á¤
+		// ì§ì±…ë²ˆí˜¸, ì§ì±…ëª…ì˜ í­ì„ (100, 200)ìœ¼ë¡œ ê°€ëŠ¥í•˜ë©´ ì„¤ì •
 		tableSetWidth(100, 200);
 	}
 
@@ -76,10 +76,10 @@ public class TitleList extends JPanel {
 
 	
 	protected String[] getColumnNames() {
-		return new String[] { "Á÷Ã¥¹øÈ£", "Á÷Ã¥¸í"};
+		return new String[] { "ì§ì±…ë²ˆí˜¸", "ì§ì±…ëª…"};
 	}
 
-	// Å×ÀÌºí ¼¿ ³»¿ëÀÇ Á¤·Ä
+	// í…Œì´ë¸” ì…€ ë‚´ìš©ì˜ ì •ë ¬
 	protected void tableCellAlignment(int align, int... idx) {
 		DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
 		dtcr.setHorizontalAlignment(align);
@@ -90,7 +90,7 @@ public class TitleList extends JPanel {
 		}
 	}
 
-	// Å×ÀÌºí ¼¿ÀÇ Æø ¼³Á¤
+	// í…Œì´ë¸” ì…€ì˜ í­ ì„¤ì •
 	protected void tableSetWidth(int... width) {
 		TableColumnModel cModel = table.getColumnModel();
 

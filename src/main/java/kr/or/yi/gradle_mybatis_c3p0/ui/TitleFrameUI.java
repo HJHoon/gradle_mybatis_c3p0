@@ -22,7 +22,7 @@ public class TitleFrameUI extends JFrame {
 	}
 
 	private void initComponents() {
-		setTitle("Á÷Ã¥°ü¸®");
+		setTitle("ì§ì±…ê´€ë¦¬");
 		setBounds(200, 100, 450, 450);
 		JPanel pMain = new JPanel();
 		getContentPane().add(pMain, BorderLayout.CENTER);
@@ -34,13 +34,13 @@ public class TitleFrameUI extends JFrame {
 		JPanel pBtns = new JPanel();
 		pMain.add(pBtns, BorderLayout.SOUTH);
 
-		JButton btnAdd = new JButton("Ãß°¡");
+		JButton btnAdd = new JButton("ì¶”ê°€");
 		pBtns.add(btnAdd);
 
-		JButton btnCancel = new JButton("Ãë¼Ò");
+		JButton btnCancel = new JButton("ì·¨ì†Œ");
 		pBtns.add(btnCancel);
 
-		TitleList pList = new TitleList("Á÷Ã¥ ¸ñ·Ï");
+		TitleList pList = new TitleList("ì§ì±… ëª©ë¡");
 		
 		pList.setItemList(new ArrayList<Title>());
 		pList.reloadData();

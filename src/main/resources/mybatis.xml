@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE configuration
- PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
- "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<properties resource="application.properties"/>
+	
+	<typeAliases>
+		<package name="kr.or.yi.gradle_mybatis_c3p0.dto"/>
+	</typeAliases>
 	
 	 <environments default="development">
 		 <environment id="development">
@@ -18,6 +20,6 @@
 	 </environments>
 	 
 	 <mappers>
-	 	
+	 	<mapper resource="mappers/TitleMapper.xml"/>
 	 </mappers>
 </configuration>
