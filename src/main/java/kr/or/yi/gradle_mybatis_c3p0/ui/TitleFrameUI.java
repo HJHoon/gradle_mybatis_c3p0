@@ -7,16 +7,16 @@ import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 
 import kr.or.yi.gradle_mybatis_c3p0.dao.TitleDao;
 import kr.or.yi.gradle_mybatis_c3p0.dao.TitleDaoImpl;
 import kr.or.yi.gradle_mybatis_c3p0.dto.Title;
 import kr.or.yi.gradle_mybatis_c3p0.ui.content.PanelTitle;
 import kr.or.yi.gradle_mybatis_c3p0.ui.list.TitleList;
-import javax.swing.JPopupMenu;
-import javax.swing.JMenuItem;
 
 @SuppressWarnings("serial")
 public class TitleFrameUI extends JFrame implements ActionListener {
@@ -43,7 +43,7 @@ public class TitleFrameUI extends JFrame implements ActionListener {
 		getContentPane().add(pMain, BorderLayout.CENTER);
 		pMain.setLayout(new BorderLayout(0, 0));
 
-		pContent = new PanelTitle();
+		pContent = new PanelTitle("직책");
 		clearContent();
 		pMain.add(pContent, BorderLayout.CENTER);
 
