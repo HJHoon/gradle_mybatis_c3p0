@@ -65,7 +65,6 @@ public class TitleFrameUI extends JFrame implements ActionListener {
 		getContentPane().add(pList, BorderLayout.SOUTH);
 		
 		popupMenu = new JPopupMenu();
-		pList.add(popupMenu, BorderLayout.NORTH);
 		
 		mntmUpdate = new JMenuItem("수정");
 		mntmUpdate.addActionListener(this);

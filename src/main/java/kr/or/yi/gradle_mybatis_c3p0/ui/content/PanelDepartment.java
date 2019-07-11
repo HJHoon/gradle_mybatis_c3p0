@@ -52,7 +52,7 @@ public class PanelDepartment extends JPanel {
 	}
 
 	public void setItem(Department dept) {
-		tfDeptNo.setText(String.format("D%03d", dept.getDeptNo()));
+		tfDeptNo.setText(String.format("D%03d", dept.getDeptCode()));
 		tfDeptName.setText(dept.getDeptName());
 		tfFloor.setText(dept.getFloor()+"");
 		tfDeptNo.setEditable(false);
@@ -71,5 +71,14 @@ public class PanelDepartment extends JPanel {
 		tfFloor.setText("");
 		tfDeptNo.setEditable(false);
 	}
-
+	
+	public JTextField getTfNo() {
+		return tfDeptNo;
+	}
+	
+	public void setComponentAllEditable(boolean isEditable) {
+		tfDeptNo.setEditable(isEditable);
+		tfDeptName.setEditable(isEditable);
+		tfFloor.setEditable(isEditable);
+	}
 }
