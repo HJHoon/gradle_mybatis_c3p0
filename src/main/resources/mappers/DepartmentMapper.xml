@@ -16,7 +16,7 @@
 	
 	<update id="updateDepartment" parameterType="Department">
 		update department
-		set dept_name = #{deptName}
+		set dept_name = #{deptName}, floor = #{floor}
 		where dept_code = #{deptCode}
 	</update>
 </mapper>

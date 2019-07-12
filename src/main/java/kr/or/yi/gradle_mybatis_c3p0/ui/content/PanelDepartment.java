@@ -20,6 +20,7 @@ public class PanelDepartment extends AbstractPanel<Department> {
 	public PanelDepartment(String title) {
 		super(title);
 	}
+
 	@Override
 	protected void initComponents(String title) {
 		setBorder(new TitledBorder(null, title + " 정보", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -69,15 +70,5 @@ public class PanelDepartment extends AbstractPanel<Department> {
 		tfDeptName.setText("");
 		tfFloor.setText("");
 		tfDeptNo.setEditable(false);
-	}
-	
-	public JTextField getTfNo() {
-		return tfDeptNo;
-	}
-	
-	public void setComponentAllEditable(boolean isEditable) {
-		tfDeptNo.setEditable(isEditable);
-		tfDeptName.setEditable(isEditable);
-		tfFloor.setEditable(isEditable);
 	}
 }
