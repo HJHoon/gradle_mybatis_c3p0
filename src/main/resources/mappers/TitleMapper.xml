@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.titleMapper">
-	<select id="selectTitleByAll" resultType="Title">
+	<resultMap type="Title" id="titleResult">
+		<id column="title_code" property="titleNo"/>
+	</resultMap>
+	
+	<select id="selectTitleByAll" resultMap="titleResult">
 		select title_code,title_name from title
 	</select>
 	
