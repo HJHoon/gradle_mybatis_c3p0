@@ -13,3 +13,17 @@ INSERT INTO employee(eno, ename, title,salary, gender,dno,joindate) VALUES
 (2106,'±Ë√¢º∑',4,2500000,0, 2, '2018-08-01'),
 (3427,'√÷¡æ√∂',4,1500000,0, 2, '2019-03-01');
 
+-- procedure ª˝º∫
+
+drop procedure if exists salary_total;
+DELIMITER $$
+$$
+create procedure salary_total(in deptno int)
+begin
+	select dept_name, ifnull(sum(salary),0)as total
+	from employee e right join department d on e.dno = d.dept_code
+	where dno = deptno;
+END$$
+DELIMITER ;
+
+call salary_total(2);
