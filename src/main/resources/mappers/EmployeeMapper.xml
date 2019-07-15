@@ -20,4 +20,33 @@
 		from employee e join department d on e.dno = d.dept_code
 		join title t on e.title = t.title_code;
 	</select>
+	
+	<update id="updateEmployee" parameterType="Employee">
+		update employee
+		set ename=#{eName},
+			salary=#{salary},
+			dno=#{dno.deptCode},
+			gender=#{gender},
+			joindate=#{joinDate},
+			title=#{title.titleNo}
+		where eno=#{eNo}
+	</update>
+	
+	<insert id="insertEmployee" parameterType="Employee">
+		INSERT INTO employee
+		(eno, ename, salary, gender, joindate, dno, title)
+		VALUES(#{eNo}, #{eName}, #{salary},  #{gender},#{joinDate}, #{dno.deptCode}, #{title.titleNo});
+ 
+	</insert>
+	
+	<delete id="deleteEmployee" parameterType="Employee">
+		delete from employee where eno = #{eNo}
+	</delete>
+	
+	<select id="selectEmployeeByCode" parameterType="Employee" resultMap="empResult">
+		select eno,ename, salary, dept_code, dept_name, floor, gender, joindate, title_code, title_name
+		from employee e join department d on e.dno = d.dept_code
+		join title t on e.title = t.title_code
+		where eno = #{eNo}
+	</select>
 </mapper>
