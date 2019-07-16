@@ -49,4 +49,12 @@
 		join title t on e.title = t.title_code
 		where eno = #{eNo}
 	</select>
+	
+	<select id="getSalaryByDepartment" statementType="CALLABLE" parameterType="map" resultType="State">
+		{call salary_total(#{deptno,mode=IN,jdbcType=INTEGER})}
+	</select>
+	
+	<select id="getStateSalaryByDepartment" statementType="CALLABLE" parameterType="map" resultType="State">
+		{call salary_total(#{deptno,mode=IN,jdbcType=INTEGER})}
+	</select>
 </mapper>

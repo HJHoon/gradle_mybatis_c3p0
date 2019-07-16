@@ -9,3 +9,5 @@ from employee e join department d on e.dno = d.dept_code
 join title t on e.title = t.title_code;
 
 select title_code,title_name from title;
+
+call salary_total(2);

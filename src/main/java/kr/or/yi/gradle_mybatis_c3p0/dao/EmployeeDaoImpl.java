@@ -1,10 +1,17 @@
 package kr.or.yi.gradle_mybatis_c3p0.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.apache.ibatis.session.ResultContext;
+import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.SqlSession;
 
+import com.mysql.fabric.xmlrpc.base.Param;
+
 import kr.or.yi.gradle_mybatis_c3p0.dto.Employee;
+import kr.or.yi.gradle_mybatis_c3p0.dto.State;
 import kr.or.yi.gradle_mybatis_c3p0.jdbc.MyBatisSqlSessionFactory;
 
 public class EmployeeDaoImpl implements EmployeeDao {
@@ -51,4 +58,28 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		}
 	}
 
+	@Override
+	public Map<String, Object> getSalaryByDepartment(Map<String, Object> param) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		ResultHandler<State> resultHandler = new ResultHandler<State>() {
+
+			@Override
+			public void handleResult(ResultContext<? extends State> resultContext) {
+				State state = resultContext.getResultObject();
+				map.put(state.getDeptName(), state.getTotal());
+			}
+			
+		};
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.openSession()){
+			sqlSession.select(namespace + ".getSalaryByDepartment", param,resultHandler);
+		}
+		return map;
+	}
+
+	@Override
+	public State getStateSalaryByDepartment(Map<String, Object> param) {
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.openSession()){
+			return sqlSession.selectOne(namespace + ".getStateSalaryByDepartment", param);
+	}
+  }
 }
